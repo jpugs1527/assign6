@@ -15,7 +15,7 @@ class TodoForm extends Component {
 
   addTodo(e) {
     e.preventDefault();
-    if (this.inputValue !== "") {
+    if (this.inputValue.value !== "") {
       var newTodo = {
         key: Date.now(),
         value: this.inputValue.value

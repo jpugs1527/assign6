@@ -17,9 +17,10 @@ class TodoItems extends Component {
     this.props.delete(key);
   }
 
-  render() {
-    var items = this.props.items;
-    var todos = items.map(this.createTodos)
+  render() {    
+    // uses .map to iterate over the items array passed to this component and call createTodos on it
+    var todos = this.props.items.map(this.createTodos)
+
     return (
       <ol>
         {todos}
