@@ -36,7 +36,7 @@ class TodoForm extends Component {
   deleteTodo(key) {
     // Filters through items and only returns the ones that have not had delete called on them
     var filteredItems = this.state.items.filter(function (todo) {
-      return (todo.key != key);
+      return (todo.key !== key);
     });
 
     // update state with non deleted items
@@ -49,7 +49,7 @@ class TodoForm extends Component {
     return (
       <div>
         <form onSubmit={this.addTodo}>
-          <input ref={(a) => this.inputValue = a} placeholder="Add new todo" />
+          <input ref={(text) => this.inputValue = text} placeholder="Add new todo" />
           <button type="submit">+</button>
         </form>
         <TodoItems items={this.state.items} delete={this.deleteTodo}/>
